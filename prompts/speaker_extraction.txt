@@ -1,0 +1,11 @@
+Com base no seguinte texto de uma transcrição de audio, diga o nome da pessoa que irá falar na próxima fala:
+
+Responda uma sentença apenas com o nome da pessoa:
+
+Exemplos:
+P: "...vamos ouvir o professor Rodrigo Campos?" R:"Rodrigo Campos"
+P: "...o que o estudioso Paulo Roberto da Silva tem para nos ensinar?" R: "Paulo Roberto da Silva"
+P: "... aqui está o audio que a pesquisadora Jucelly dos Santos Bertolinni nos enviou sobre o assunto." R: "Jucelly dos Santos Bertolinni"
+
+P: "Ent\u00e3o vamos ouvir o Jo\u00e3o Paulo Rosa, que \u00e9 professor de departamento de educa\u00e7\u00e3o f\u00edsica do Instituto tutor de bioci\u00eancias da Unesp campus Rio, claro.\nEle \u00e9 graduado em Educa\u00e7\u00e3o F\u00edsica pela Universidade Federal de Uberl\u00e2ndia especialista e mestrado em Ci\u00eancias pela Universidade Federal de S\u00e3o Paulo, Unifesp e doutorado em Ci\u00eancias do Esporte pela Universidade Federal de Minas Gerais.\nDesenvolver o trabalho junto ao Comit\u00ea Ol\u00edmpico do Brasil e Comit\u00ea Paral\u00edmpico Brasileiro no monitoramento de aspectos psicobiol\u00f3gicos dos atletas durante o treinamento para os Jogos Ol\u00edmpicos e para Ol\u00edmpicos de 2016.\n\u00c9 membro pesquisador da Academia Paral\u00edmpica Brasileira e coordenador do GP PESP, Grupo de Estudos e Pesquisas em Exerc\u00edcio F\u00edsico, Sa\u00fade e Performance da Unesp de Rio Claro.\nVamos ouvir ent\u00e3o o Jo\u00e3o Paulo?"
+R:
