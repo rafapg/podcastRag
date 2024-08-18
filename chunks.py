@@ -56,7 +56,7 @@ def split_paragraph_in_chunks(paragraph: object) -> list:
             )
             transcription_chunks.append(chunk_object)
             chunk_text = ""
-            chunk_start = None
+            chunk_start = sentence["start"]
 
         chunk_text += " " + sentence["text"]
 
