@@ -19,7 +19,7 @@ def main():
             embedding_list.append(chunk)
 
         with open(TRANSCRIPT_EMBED_FILE, "w") as file:
-            file.write(json.dumps(embedding_list, indent=4))
+            file.write(json.dumps(embedding_list))
 
     except Exception as e:
         print(f"Exception: {e}")

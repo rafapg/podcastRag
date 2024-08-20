@@ -3,6 +3,7 @@ import tiktoken
 
 SAVE_FILE = True
 TRANSCRIPTION_FILE = "data/transcription/naruhodo-424-transcript.json"
+CHUNKS_FILE = "data/transcription/naruhodo-424-chunks.json"
 enc = tiktoken.encoding_for_model("gpt-4o")
 
 
@@ -108,8 +109,7 @@ def main():
             transcription_chunks += split_paragraph_in_chunks(sentence_agg)
 
         if SAVE_FILE:
-            chunks_file = "data/transcription/naruhodo-424-chunks.json"
-            with open(chunks_file, "w") as file:
+            with open(CHUNKS_FILE, "w") as file:
                 file.write(json.dumps(transcription_chunks, indent=4))
 
     except Exception as e:

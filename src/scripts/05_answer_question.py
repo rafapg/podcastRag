@@ -1,14 +1,6 @@
 import ollama
 from psycopg2 import connect
 
-# CREATE TABLE transcription_embed (
-#     start_time FLOAT NOT NULL,
-#     end_time FLOAT NOT NULL,
-#     speaker TEXT NOT NULL,
-#     embedding vector,
-#     transcript TEXT
-# );
-
 
 def _get_database_connection():
     return connect(
@@ -21,23 +13,11 @@ def _get_database_connection():
 
 
 def answer_question(question: str, context: list) -> str:
-    prompt = f"""
-Você é um assistente que deve responder à perguntas com base em um conjunto de textos forncecidos.
-Você deve entender a pergunta, analisar os textos do conjunto fornecido e montar a pergunta mais completa para a pergunta.
+    with open("prompts/question_anwser.txt", "r") as file:
+        template = file.read()
+    prompt = template.replace("<QUESTION>", question).replace(
+        "<CONTEXT>", "\n\n- ".join(context))
 
-A resposta da pergunta deve conter apenas informações contidas no conjunto de textos fornecidos. Nenhuma informação adicional deve ser fornecida.
-Caso não seja possível responder a pergunta com as informações fornecidas, a resposta deve ser "Não sei responder a pergunta".
-
-Pergunta: `'{question}'`
-
-Conjunto de Textos:
-
-```
-- '{'\n-'.join(context)}'
-```
-
-Resposta:
-"""
     print(prompt)
     llm_response = ollama.generate('llama3:8b', prompt)
     return llm_response["response"]
