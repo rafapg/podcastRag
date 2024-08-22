@@ -1,9 +1,15 @@
 import json
 import tiktoken
 
+# EPISODE_NAME = "naruhodo-424"
+# SPEAKER_LIST = ["Ken Fujioka", "Altay de Souza"]
+
+EPISODE_NAME = "h30-cesio137"
+SPEAKER_LIST = []
+
 SAVE_FILE = True
-TRANSCRIPTION_FILE = "data/transcription/naruhodo-424-transcript.json"
-CHUNKS_FILE = "data/transcription/naruhodo-424-chunks.json"
+TRANSCRIPTION_FILE = f"data/transcription/{EPISODE_NAME}-transcript.json"
+CHUNKS_FILE = f"data/transcription/{EPISODE_NAME}-chunks.json"
 enc = tiktoken.encoding_for_model("gpt-4o")
 
 
@@ -16,7 +22,7 @@ def sec_to_time_str(sec: float) -> str:
 
 def getSpeakerName(speakerId: int) -> str:
 
-    speaker_list_position = ["Ken Fujioka", "Altay de Souza"]
+    speaker_list_position = SPEAKER_LIST
     speaker = ""
     if speakerId < len(speaker_list_position):
         speaker = speaker_list_position[speakerId]

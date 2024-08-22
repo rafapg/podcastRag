@@ -1,6 +1,9 @@
 import ollama
 from psycopg2 import connect
 
+# QUESTION = "Qual a utilidade da luz azul na medicina?"
+QUESTION = "O que é o césio 137?"
+
 
 def _get_database_connection():
     return connect(
@@ -25,7 +28,7 @@ def answer_question(question: str, context: list) -> str:
 
 def main():
     try:
-        question = "Qual a utilidade da luz azul na medicina?"
+        question = QUESTION
         conn = _get_database_connection()
         sql_cursor = conn.cursor()
         embed_response = ollama.embed(
@@ -38,7 +41,7 @@ def main():
             1 - (embedding <=> '{question_embeddings}') AS cosine_similarity
             from transcription_embed
             ORDER BY cosine_similarity desc
-            LIMIT 10""")
+            LIMIT 5""")
         result = sql_cursor.fetchall()
         context = [f"{row[3]}" for row in result]
         answer = answer_question(question, context)

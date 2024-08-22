@@ -1,8 +1,11 @@
 import json
 import ollama
 
-TRANSCRIPT_CHUNKS_FILE = "data/transcription/naruhodo-424-chunks.json"
-TRANSCRIPT_EMBED_FILE = "data/transcription/naruhodo-424-embed.json"
+# EPISODE_NAME = "naruhodo-424"
+EPISODE_NAME = "h30-cesio137"
+
+TRANSCRIPT_CHUNKS_FILE = f"data/transcription/{EPISODE_NAME}-chunks.json"
+TRANSCRIPT_EMBED_FILE = f"data/transcription/{EPISODE_NAME}-embed.json"
 
 
 def main():

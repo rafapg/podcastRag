@@ -4,7 +4,10 @@ import json
 from dotenv import load_dotenv
 load_dotenv()
 
-EMBED_FILE = "data/transcription/naruhodo-424-embed.json"
+# EPISODE_NAME = "naruhodo-424"
+EPISODE_NAME = "h30-cesio137"
+
+EMBED_FILE = f"data/transcription/{EPISODE_NAME}-embed.json"
 INSERT_EMBEDDING = """
 INSERT INTO transcription_embed (start_time, end_time, speaker, embedding, transcript)
 VALUES (%s, %s, %s, %s, %s)
